@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asylkhan Games.kz - Ойындар</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #000;
+    font-size: 16px;
+  }
+
+  header {
+    background: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo span { font-size: 20px; font-weight: bold; }
+
+  .hamburger { width: 35px; height: 30px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }
+  .hamburger div { width: 100%; height: 5px; background: black; border-radius: 4px; transition: 0.3s; }
+  .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+  .hamburger.active div:nth-child(2) { opacity: 0; }
+  .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+  #mobileMenu {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    width: 180px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 90;
+  }
+
+  #mobileMenu a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  #mobileMenu a:hover { background: #ececec; }
+
+  .cards { padding: 10px; display: flex; flex-direction: column; gap: 15px; }
+
+  .card {
+    position: relative;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .card h3 { margin: 0 0 5px 0; }
+  .card p { margin: 0 0 10px 0; }
+
+  .card button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #0099ff;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Құлыпталған стиль */
+  .locked {
+    opacity: 0.5;
+  }
+
+  .locked button {
+    background: grey;
+    cursor: not-allowed;
+  }
+
+  .locked::after {
+    content: "🔒";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><span>asylkhan games.kz</span></div>
+  <div class="hamburger" onclick="toggleMenu(this)"><div></div><div></div><div></div></div>
+</header>
+
+<nav id="mobileMenu">
+  <a href="index.html">Басты бет</a>
+  <a href="contact.html">Байланыс</a>
+</nav>
+
+<section class="cards">
+  <!-- Ашық ойын -->
+  <div class="card">
+    <img src="gamelogo.png" alt="?">
+    <h3>School to zombie</h3>
+    <p>Зомбилермен толы қалада аман қалу керек.</p>
+    <button>Ойынды көру</button>
+  </div>
+
+  <!-- Құлыпталған ойындар -->
+  <div class="card locked">
+    <img src="game2.jpg" alt="?">
+    <h3>ойын шықпады</h3>
+    <p>?</p>
+    <button disabled>Құлыпталған</button>
+  </div>
+  <div class="card locked">
+    <img src="game3.jpg" alt="?">
+    <h3>ойын шықпады</h3>
+    <p>?</p>
+    <button disabled>Құлыпталған</button>
+  </div>
+  <div class="card locked">
+    <img src="game4.jpg" alt="?">
+    <h3>ойын шықпады</h3>
+    <p>?</p>
+    <button disabled>Құлыпталған</button>
+  </div>
+  <div class="card locked">
+    <img src="game5.jpg" alt="?">
+    <h3>ойын шықпады</h3>
+    <p>?</p>
+    <button disabled>Құлыпталған</button>
+  </div>
+</section>
+
+<footer id="footer">
+  <p>© 2025 asylkhan games.kz — Барлық құқықтар қорғалған</p>
+</footer>
+
+<script>
+function toggleMenu(x) {
+  x.classList.toggle("active");
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>

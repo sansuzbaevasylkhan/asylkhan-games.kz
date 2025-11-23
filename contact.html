@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Байланыс</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+
+    /* HEADER */
+    header {
+      background: white;
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+    }
+
+    .logo span {
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+
+    /* Гамбургер */
+    .hamburger {
+      width: 35px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 100%;
+      height: 5px;
+      background: black;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* МЕНЮ */
+    #mobileMenu {
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background: white;
+      width: 180px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 90;
+    }
+
+    #mobileMenu a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    #mobileMenu a:hover {
+      background: #ececec;
+    }
+
+    /* Сілтемелер */
+    .links {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .link-item img {
+      width: 200px;
+      height: 200px;
+      margin-right: 20px;
+    }
+
+    .link-item a {
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+      flex: 1;
+      margin-left: 10px;
+    }
+
+    .link-item button {
+      background: #0099ff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .link-item button:hover {
+      background: #007acc;
+    }
+
+    @media(max-width: 600px) {
+      .link-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .link-item button {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: white;
+      margin-top: 20px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <span>asylkhan games.kz</span>
+  </div>
+  <div class="hamburger" onclick="toggleMenu(this)">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</header>
+
+<!-- MENU -->
+<nav id="mobileMenu">
+  <a href="index.html">Басты бет</a>
+  <a href="contact.html">Байланыс</a>
+</nav>
+
+<!-- LINKS -->
+<section class="links">
+  <div class="link-item">
+    <img src="web.png" alt="Вебсайт">
+    <a href="https://asik-kz-gamer.vercel.app/" target="_blank">Вебсайт</a>
+    <button onclick="window.open('https://asik-kz-gamer.vercel.app/', '_blank')">Подписаться</button>
+  </div>
+
+  <div class="link-item">
+    <img src="portfolio.png" alt="Портфолио">
+    <a href="https://sansuzbaevasylkhan.github.io/asik_kzGamer.kz/" target="_blank">Портфолио</a>
+    <button onclick="window.open('https://sansuzbaevasylkhan.github.io/asik_kzGamer.kz/', '_blank')">Подписаться</button>
+  </div>
+
+  <div class="link-item">
+    <img src="games.png" alt="Ойындар платформасы">
+    <a href="https://asik-kz-gamer.itch.io/" target="_blank">Қосымша ойындар платформасы</a>
+    <button onclick="window.open('https://asik-kz-gamer.itch.io/', '_blank')">Подписаться</button>
+  </div>
+
+  <div class="link-item">
+    <img src="discord.png" alt="Discord">
+    <a href="https://discord.com/invite/CHretB5h" target="_blank">Discord</a>
+    <button onclick="window.open('https://discord.com/invite/CHretB5h', '_blank')">Подписаться</button>
+  </div>
+
+  <div class="link-item">
+    <img src="telegram.png" alt="Telegram бот">
+    <a href="https://t.me/asylkhanonlinekzcombot" target="_blank">Telegram бот</a>
+    <button onclick="window.open('https://t.me/asylkhanonlinekzcombot', '_blank')">Подписаться</button>
+  </div>
+
+  <div class="link-item">
+    <img src="channel.png" alt="Telegram арнасы">
+    <a href="https://t.me/Asik_kzGamerrrr" target="_blank">Telegram арнасы</a>
+    <button onclick="window.open('https://t.me/Asik_kzGamerrrr', '_blank')">Подписаться</button>
+  </div>
+
+  <div class="link-item">
+    <img src="twitch.png" alt="Twitch">
+    <a href="https://m.twitch.tv/asikzgamer1234" target="_blank">Twitch-те</a>
+    <button onclick="window.open('https://m.twitch.tv/asikzgamer1234', '_blank')">Подписаться</button>
+  </div>
+
+  <div class="link-item">
+    <img src="donate.png" alt="Қайырымдылық">
+    <a href="https://www.donationalerts.com/r/asylkhan2007454" target="_blank">Қайырымдылық</a>
+    <button onclick="window.open('https://www.donationalerts.com/r/asylkhan2007454', '_blank')">Подписаться</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 asylkhan games.kz — Барлық құқықтар қорғалған</p>
+</footer>
+
+<script>
+  function toggleMenu(x) {
+    x.classList.toggle("active");
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+</script>
+
+</body>
+</html>
